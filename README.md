@@ -154,9 +154,6 @@ Why build it this way? Because portfolios should be memorable experiences, not j
   Replace files in `src/assets/models/` and `src/assets/img/`. Use [gltfjsx](https://github.com/pmndrs/gltfjsx) to convert `.glb` models to React components (for phone and monitor models).
 
 ## 🏆 Additional features
-- **No tracking, no analytics:**  
-  Just code and creativity.
-
 - **Performance first:**  
   Asset preloading, scene precompilation, and postprocessing are all tuned for smoothness.
 

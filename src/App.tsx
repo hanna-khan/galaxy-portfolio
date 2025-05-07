@@ -13,6 +13,7 @@ import GitHubLink from './ui/GithubLink';
 import WebGLWarning from './ui/WebGLWarning';
 import { useWebGL2Enabled } from './hooks/useWebGL2Support';
 import { NoToneMapping } from 'three';
+import { Analytics } from "@vercel/analytics/react"
 
 // scenes
 import GalaxyScene from './scenes/Galaxy/GalaxyScene';
@@ -87,11 +88,14 @@ function AppContent() {
 
 function App() {
   return (
-    <ErrorBoundary>
-      <MobileProvider>
-        <AppContent />
-      </MobileProvider>
-    </ErrorBoundary>
+    <>
+      <ErrorBoundary>
+        <MobileProvider>
+          <AppContent />
+        </MobileProvider>
+      </ErrorBoundary>
+      <Analytics />
+    </>
   );
 }
 
