@@ -33,9 +33,12 @@ Welcome to **Galaxy Portfolio** – an interactive 3D portfolio that lets you zo
 <div align="center">
   <h3>Desktop Experience</h3>
   
-  
+  https://github.com/user-attachments/assets/d192ba9d-00c7-41fd-82a2-80704debbe65
+
   <h3>Mobile Experience</h3>
   
+  https://github.com/user-attachments/assets/ffb6b011-116c-4390-834c-477ada2167ea
+
 </div>
 
 ## 🌌 The Experience
