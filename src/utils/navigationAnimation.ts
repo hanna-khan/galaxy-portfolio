@@ -10,8 +10,6 @@ export function createNavigationAnimation({
   zoomDirections = { in: true, out: true },
   friction = NAVIGATION_ANIMATION.DEFAULT_FRICTION,
   acceleration = NAVIGATION_ANIMATION.DEFAULT_ACCELERATION,
-  initialProgress = 0,
-  initialJump = 0,
   wheelSensitivity = NAVIGATION_ANIMATION.DEFAULT_WHEEL_SENSITIVITY,
   touchSensitivity = NAVIGATION_ANIMATION.DEFAULT_TOUCH_SENSITIVITY
 }: {
@@ -22,6 +20,9 @@ export function createNavigationAnimation({
   initialJump?: number, wheelSensitivity?: number,
   touchSensitivity?: number
 }) {
+  const initialProgress = backwards ? 1 : 0; // set initial progress for backwards animation
+  const initialJump = backwards ? 1 : 0; // set initial jump for backwards animation
+
   const animState = {
     progress: initialProgress,
     targetProgress: initialJump,
@@ -109,7 +110,14 @@ export function createNavigationAnimation({
     }
 
     const absDelta = Math.abs(delta);
-    const normalizedDelta = absDelta < 0.001 ? 0 : (delta / (absDelta * 10)) * sensitivity;
+    let normalizedDelta = absDelta < 0.001 ? 0 : (delta / (absDelta * 10)) * sensitivity;
+
+    // it prevents zooming bugs when events stutter because of fps drops or so (for example: you zoom in, but the animation goes in, immidiately out, and then in again - it's because touch event gets wrong values in a moment)
+    if (!backwards && animState.progress <= NAVIGATION_ANIMATION.COMPLETION_SENSITIVITY) { // if just zoomed in and the progress in too small (at the most beginning of the animation) - make the input always zoom in to go out of sensivity sone
+      normalizedDelta = -Math.abs(normalizedDelta); // zoom in only (force normalizedDelta to be negative)
+    } else if (backwards && animState.progress >= (1 - NAVIGATION_ANIMATION.COMPLETION_SENSITIVITY)) { // if just zoomed out and the progress in too big (at the most end of the animation) - make the input always zoom out to go out of sensivity sone
+      normalizedDelta = Math.abs(normalizedDelta); // zoom out only (force normalizedDelta to be positive)
+    }
 
     isZoomIn = normalizedDelta < 0; // zoom in if delta is negative
 
@@ -141,13 +149,15 @@ export function createNavigationAnimation({
 
   const handleTouchMove = (event: TouchEvent) => {
     if (lastTouchY === 0) { // no touch start event yet
-      lastTouchY = event.touches[0].clientY;
-      lastTouchTime = Date.now();
+      handleTouchStart(event);
       return;
     }
 
     const currentY = event.touches[0].clientY;
     const deltaY = lastTouchY - currentY;
+
+    if (deltaY === 0) return; // no movement
+
     const currentTime = Date.now();
     const timeDelta = Math.max(10, currentTime - lastTouchTime);
 

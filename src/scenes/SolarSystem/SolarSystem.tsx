@@ -74,8 +74,6 @@ export function SolarSystem() {
       timeline: tl,
       onComplete: endTransition,
       backwards: backwards,
-      initialProgress: backwards ? 1 : 0,
-      initialJump: backwards ? 1 : 0
     });
 
     return () => {
@@ -134,8 +132,6 @@ export function SolarSystem() {
       timeline: tl,
       onComplete: endTransition,
       backwards: backwards,
-      initialProgress: backwards ? 1 : 0,
-      initialJump: backwards ? 1 : 0
     });
 
     return () => {

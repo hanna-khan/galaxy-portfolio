@@ -150,8 +150,6 @@ export const Earth = forwardRef<Group>((props, ref: React.ForwardedRef<Group>) =
       timeline: tl,
       onComplete: endTransition,
       backwards: backwards,
-      initialProgress: backwards ? 1 : 0,
-      initialJump: backwards ? 1 : 0
     });
 
     return () => {
@@ -218,8 +216,6 @@ export const Earth = forwardRef<Group>((props, ref: React.ForwardedRef<Group>) =
       timeline: tl,
       onComplete: endTransition,
       backwards: backwards,
-      initialProgress: backwards ? 1 : 0,
-      initialJump: backwards ? 1 : 0
     });
 
     return () => {

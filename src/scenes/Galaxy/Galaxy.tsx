@@ -159,8 +159,6 @@ export function Galaxy() {
       onComplete: endTransition,
       backwards: backwards,
       zoomDirections: { in: true, out: false },
-      initialProgress: backwards ? 1 : 0,
-      initialJump: backwards ? 1 : 0,
     });
 
     return () => {

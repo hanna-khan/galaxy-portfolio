@@ -299,7 +299,7 @@ const Monitor: React.FC<MonitorProps> = ({ roomGLTF }): JSX.Element => {
         </Html>
     )
 
-    // monitor model converted to tsx (jsx) using "npx gltfjsx /src/assets/models/monitor.glb"
+    // monitor model converted to tsx (jsx) using "npx gltfjsx /assets/models/monitor.glb"
     return (
         <group name="Monitor" dispose={null}
             position={[deskPosition.x + DEVICE.MONITOR.POSITION_OFFSET.x, DEVICE.MONITOR.POSITION_OFFSET.y, deskPosition.z + DEVICE.MONITOR.POSITION_OFFSET.z]} // set relative to desk position
