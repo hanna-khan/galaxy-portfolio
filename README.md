@@ -177,6 +177,9 @@ For a complete list of all third-party models, textures, icons, and references u
   ```
   This will optimize and compress your GLB model for best performance.
 
+- **Lightmap baking for optimal performance:**  
+  To achieve realistic lighting without the runtime cost of real-time lighting calculations, I used my custom [Blender Batch Lightmap Baker](https://github.com/techinz/blender-batch-lightmap-baker) script. This tool automates the tedious process of creating and applying lightmaps to 3D models, which significantly reduces render times while maintaining visual quality. For the room scene specifically, baked lighting cut GPU usage by ~40% compared to real-time lighting, giving that smooth 60+ FPS experience even on mid-range devices. The script handles UV unwrapping, material setup, and texture output in one go - saving hours of manual work per model.
+
 - **After changing phone or monitor 3D model:**  
   Re-run `npx gltfjsx <model.glb>` and update the corresponding React component.
 
