@@ -14,6 +14,26 @@
 
     <!-- css -->
     <link rel="stylesheet" href="/assets/css/portfolio.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabButtons = document.querySelectorAll(".tab-btn");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            tabButtons.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach((b) => b.classList.remove("active"));
+                    tabContents.forEach((c) => c.classList.remove("active"));
+
+                    // Add active to clicked button and corresponding content
+                    btn.classList.add("active");
+                    const tabId = btn.getAttribute("data-tab");
+                    const activeContent = document.getElementById(tabId);
+                    if (activeContent) activeContent.classList.add("active");
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -37,16 +57,16 @@
                 <img src="/assets/img/pfp.jpg" alt="Vladyslav Shtatskyi">
             </div>
             <div class="hero-text">
-                <h1 class="hero-name">Vladyslav Shtatskyi</h1>
-                <h2 class="hero-title">Full-Stack Developer</h2>
+                <h1 class="hero-name">Ameer Hamza</h1>
+                <h2 class="hero-title">Crafting Immersive Digital Experiences</h2>
                 <p class="hero-description">
-                    I build secure, scalable systems that solve real business problems. From automation to enterprise
-                    applications, my code works reliably behind the scenes so you can focus on growth. I deliver
-                    solutions.
+                    Hi, I'm Ameer Hamza — a full-stack developer blending clean code with creative design. From seamless
+                    frontends to powerful backends, and even 3D magic with WebGL & Three.js — I turn ideas into
+                    interactive realities.
                 </p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Get in Touch
+                        <i class="fas fa-envelope"></i> Let's Talk
                     </a>
                 </div>
             </div>
@@ -60,36 +80,35 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        My journey in software development began in my early teens, turning a passion for automation
-                        into a
-                        professional career building enterprise solutions. I still tackle each project with the same
-                        curiosity and determination.
+                        Who is Ameer Hamza? <br>
+                        A passionate full-stack developer with a flair for storytelling through code. With a strong
+                        foundation in both frontend and backend technologies, I don’t just build websites — I craft
+                        digital experiences.
+
+                        Whether it’s a lightning-fast API, a pixel-perfect user interface, or a 3D product demo powered
+                        by WebGL & Three.js — I thrive where creativity meets logic. I believe the best software doesn’t
+                        just work — it wows.
                     </p>
                     <p>
-                        As my skills evolved, I became increasingly aware of the vulnerabilities in many systems I
-                        encountered.
-                        This led me to specialize in cybersecurity alongside development. Today, security isn't an
-                        add-on in my work -
-                        it's built into everything I create. In a world of increasing digital threats, this integrated
-                        approach
-                        gives my clients peace of mind.
+                        What drives me? <br>
+
+                        A love for solving real-world problems with clean, scalable code
+
+                        A passion for beautiful, intuitive design
+
+                        A hunger to stay on the edge of modern web tech
                     </p>
-                    <p>
-                        Working across cultures has shaped my approach to problem-solving. Being fluent in English,
-                        German, Russian, and Ukrainian has opened doors to international collaborations where diverse
-                        perspectives lead to more robust solutions. This multicultural background helps me build
-                        products that resonate globally.
-                    </p>
+
                 </div>
                 <div class="about-info">
                     <div class="info-item">
                         <span class="info-title">Location</span>
-                        <span>Hannover, Germany</span>
+                        <span>Karachi, Pakistan</span>
                     </div>
                     <div class="info-item">
                         <span class="info-title">Email</span>
                         <span><a href="mailto:contact@techinz.dev"
-                                style="color: inherit; text-decoration: none;">contact@techinz.dev</a></span>
+                                style="color: inherit; text-decoration: none;">contact@ameerhamza.dev</a></span>
                     </div>
                     <div class="info-item">
                         <span class="info-title">Status</span>
@@ -99,15 +118,13 @@
                     </div>
                     <div class="info-item">
                         <span class="info-title">Experience</span>
-                        <span>6+ years</span>
+                        <span>5+ years</span>
                     </div>
                     <div class="info-item">
                         <span class="info-title">Languages</span>
                         <div class="languages-list">
                             <span class="language-tag">English</span>
-                            <span class="language-tag">German</span>
-                            <span class="language-tag">Russian</span>
-                            <span class="language-tag">Ukrainian</span>
+                            <span class="language-tag">Urdu</span>
                         </div>
                     </div>
                 </div>
@@ -118,182 +135,157 @@
     <!-- skills -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title"><span>Skills & Technologies</span></h2>
+            <h2 class="section-title"><span>Skills</span></h2>
             <div class="skills-container">
                 <div class="skills-grid">
-                    <!-- python -->
-                    <div class="skill-card python">
-                        <h3 class="skill-title"><i class="fab fa-python"></i> Python</h3>
+                    <!-- Frontend -->
+                    <div class="skill-card">
+                        <h3 class="skill-title">Frontend</h3>
                         <div class="skill-content">
-                            <div>
-                                <div class="skill-subcategory">Web Frameworks</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Django</span>
-                                    <span class="skill-tag">Flask</span>
-                                    <span class="skill-tag">FastAPI</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Automation</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Playwright</span>
-                                    <span class="skill-tag">Selenium</span>
-                                    <span class="skill-tag">Puppeteer</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Async Programming</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Asyncio</span>
-                                    <span class="skill-tag">AioHTTP</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Concurrency & Parallelism</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Threading</span>
-                                    <span class="skill-tag">Multiprocessing</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Data & APIs</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">SQLAlchemy</span>
-                                    <span class="skill-tag">Pandas</span>
-                                    <span class="skill-tag">Requests/Httpx</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Bot Development</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Aiogram</span>
-                                    <span class="skill-tag">Telethon</span>
-                                    <span class="skill-tag">Pyrogram</span>
-                                </div>
+                        <div class="skill-list">
+                                <span class="skill-tag">React.js</span>
+                                <span class="skill-tag">Next.js</span>
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">TailwindCSS</span>
+                                <span class="skill-tag">JavaScript (ES6+)</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">WebGL / Three.js</span>
+                                <span class="skill-tag">Custom Shaders</span>
+                                <span class="skill-tag">3D Product Viewers</span>
+                                <span class="skill-tag">Animations</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- frontend -->
-                    <div class="skill-card html">
-                        <h3 class="skill-title"><i class="fab fa-html5"></i> Frontend</h3>
+                    <!-- Backend -->
+                    <div class="skill-card">
+                        <h3 class="skill-title">Backend</h3>
                         <div class="skill-content">
-                            <div>
-                                <div class="skill-subcategory">Core Technologies</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">HTML</span>
-                                    <span class="skill-tag">CSS</span>
-                                    <span class="skill-tag">JavaScript</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">UI/UX</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Responsive Design</span>
-                                    <span class="skill-tag">Animations</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Layout</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">CSS Grid</span>
-                                    <span class="skill-tag">Flexbox</span>
-                                </div>
+                            <div class="skill-list">
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">REST APIs</span>
+                                <span class="skill-tag">GraphQL</span>
+                                <span class="skill-tag">Authentication</span>
+                                <span class="skill-tag">JWT</span>
+                                <span class="skill-tag">OAuth</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- js -->
-                    <div class="skill-card node">
-                        <h3 class="skill-title"><i class="fab fa-node-js"></i> JavaScript</h3>
+                    <!-- DevOps & Tools -->
+                    <div class="skill-card">
+                        <h3 class="skill-title">DevOps & Tools</h3>
                         <div class="skill-content">
-                            <div>
-                                <div class="skill-subcategory">Frontend Libraries</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">React</span>
-                                    <span class="skill-tag">Three.js</span>
-                                    <span class="skill-tag">R3F</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Backend Technologies</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Node.js</span>
-                                    <span class="skill-tag">GraphQL</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Tools</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">NPM</span>
-                                    <span class="skill-tag">Webpack</span>
-                                    <span class="skill-tag">Vite</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Real-time</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">WebSockets</span>
-                                    <span class="skill-tag">Socket.io</span>
-                                </div>
+                            <div class="skill-list">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">CI/CD</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Vercel</span>
+                                <span class="skill-tag">Netlify</span>
+                                <span class="skill-tag">Figma to Code</span>
+                                <span class="skill-tag">SEO Optimization</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- devops -->
-                    <div class="skill-card linux">
-                        <h3 class="skill-title"><i class="fab fa-linux"></i> DevOps</h3>
+                    <!-- Creative Tech -->
+                    <div class="skill-card">
+                        <h3 class="skill-title">Creative Tech</h3>
                         <div class="skill-content">
-                            <div>
-                                <div class="skill-subcategory">Containers</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Docker</span>
-                                    <span class="skill-tag">Kubernetes</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Databases</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">PostgreSQL</span>
-                                    <span class="skill-tag">MySQL</span>
-                                    <span class="skill-tag">Redis</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Server Admin</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">Bash</span>
-                                    <span class="skill-tag">Nginx</span>
-                                    <span class="skill-tag">Apache</span>
-                                    <span class="skill-tag">systemd</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="skill-subcategory">Tools</div>
-                                <div class="skill-list">
-                                    <span class="skill-tag">CI/CD</span>
-                                    <span class="skill-tag">Cron</span>
-                                </div>
+                            <div class="skill-list">
+                                <span class="skill-tag">WebGL + GLSL</span>
+                                <span class="skill-tag">Three.js</span>
+                                <span class="skill-tag">Camera Controls</span>
+                                <span class="skill-tag">Lighting</span>
+                                <span class="skill-tag">Animations</span>
+                                <span class="skill-tag">Object Interactions</span>
+                                <span class="skill-tag">GSAP</span>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- portfolio -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title"><span>Portfolio</span></h2>
+
+            <!-- Tab Buttons -->
+            <div class="portfolio-tabs">
+                <button class="tab-btn active" data-tab="architecture">Architecture / Real Estate</button>
+                <button class="tab-btn" data-tab="automotive">Product / Automotive</button>
+                <button class="tab-btn" data-tab="healthcare">Healthcare / Science</button>
+                <button class="tab-btn" data-tab="ecommerce">Ecommerce</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div>
+                <!-- Architecture / Real Estate -->
+                <div class="tab-content active" id="architecture">
+                    <div class="card-grid">
+                        <a href="https://mfisher-apollonas.com/" class="portfolio-card" target="_blank">
+                            <div class="skill-title">mfisher-apollonas.com</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci quidem officiis
+                                vero iste doloribus veniam exercitationem earum alias! Consectetur?</p>
+                        </a>
+                        <a href="https://iqosa.com/" class="portfolio-card" target="_blank">
+                            <div class="skill-title">iqosa.com</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci quidem officiis
+                                vero iste doloribus veniam exercitationem earum alias! Consectetur?</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product / Automotive -->
+                <div class="tab-content" id="automotive">
+                    <div class="card-grid">
+                        <a href="https://www.tagheuer.com/int/en/" class="portfolio-card" target="_blank">
+                            <div class="skill-title">tagheuer.com</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias pariatur, ab
+                                adipisci non in eum quisquam distinctio nesciunt nam.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Healthcare / Science -->
+                <div class="tab-content" id="healthcare">
+                    <div class="card-grid">
+                        <a href="https://www.metacrafters.io/" class="portfolio-card" target="_blank">
+                            <div class="skill-title">metacrafters.io</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias pariatur, ab
+                                adipisci non in eum quisquam distinctio nesciunt nam.</p>
+                        </a>
+                        <a href="https://www.hematogenix.com/" class="portfolio-card" target="_blank">
+                            <div class="skill-title">hematogenix.com</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias pariatur, ab
+                                adipisci non in eum quisquam distinctio nesciunt nam.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ecommerce -->
+                <div class="tab-content" id="ecommerce">
+                    <div class="card-grid">
+                        <a href="https://www.wayfair.com/" class="portfolio-card" target="_blank">
+                            <div class="skill-title">wayfair.com</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias pariatur, ab
+                                adipisci non in eum quisquam distinctio nesciunt nam.</p>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- my approach -->
     <section class="section section-bg" id="approach">
@@ -336,26 +328,6 @@
         </div>
     </section>
 
-    <!-- free task (is it a good idea tho?) -->
-    <section class="section">
-        <div class="container">
-            <div class="free-task-container">
-                <div class="free-task-icon">
-                    <i class="fas fa-clipboard-check"></i>
-                </div>
-                <h3 class="free-task-title">Try Before You Hire</h3>
-                <p class="free-task-description">
-                    Still deciding? Let's start with a <span>free test task</span>.
-                    It's the best way to see my skills in action on your actual needs -
-                    no commitment required.
-                </p>
-                <a href="#contact" class="btn btn-primary free-task-btn">
-                    <i class="fas fa-paper-plane"></i> Request Test Task
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- contact -->
     <section id="contact" class="section">
         <div class="container">
@@ -381,7 +353,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Location</h4>
-                            <p class="contact-value">Hannover, Germany</p>
+                            <p class="contact-value">Karachi, Pakistan</p>
                         </div>
                     </div>
 
@@ -399,12 +371,12 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="https://github.com/techinz" target="_blank" class="social-link" aria-label="GitHub">
+                    <!-- <a href="https://github.com/techinz" target="_blank" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="https://t.me/playweb3" target="_blank" class="social-link" aria-label="Telegram">
                         <i class="fab fa-telegram"></i>
-                    </a>
+                    </a> -->
                     <a href="https://www.linkedin.com/in/vladyslav-shtatskyi-8752092a7/" target="_blank"
                         class="social-link" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
@@ -417,9 +389,7 @@
     <!-- footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text">© 2025 Vladyslav Shtatskyi (techinz). All Rights Reserved.</p>
-            <p class="footer-text">This portfolio is <a href="https://github.com/techinz/galaxy-portfolio"
-                    target="_blank" style="color: #3498db;">open-source</a>!</p>
+            <p class="footer-text">© 2025 Ameer Hamza (techinz). All Rights Reserved.</p>
         </div>
     </footer>
 

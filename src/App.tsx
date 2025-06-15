@@ -79,7 +79,7 @@ function AppContent() {
           <NavigationHint />
           <ZoomProgressIndicator />
           <SceneTextComponent />
-          <GitHubLink />
+          {/* <GitHubLink /> */}
         </>
       )}
     </>
