@@ -35,9 +35,9 @@ function SceneTextComponent() {
       case 'continent':
         return { header: 'Asia', sub: 'Continent' };
       case 'city':
-        return { header: 'Karachi, Pakistan', sub: 'City' };
+        return { header: 'Virginia, USA', sub: 'City' };
       case 'district':
-        return { header: 'Sindh, Karachi', sub: 'District' };
+        return { header: 'District, Virginia', sub: 'District' };
       case 'room':
         return { header: 'My Studio', sub: 'Workspace' };
       default:
