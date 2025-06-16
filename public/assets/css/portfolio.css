@@ -124,8 +124,9 @@ body {
 
 .hero-image {
     width: 185px;
-    height: 175px;
-    border-radius: 50%;
+    height: 400px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
     position: relative;
     border: none;
