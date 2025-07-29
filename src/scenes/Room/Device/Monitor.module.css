@@ -200,7 +200,7 @@
 }
 
 .web-content {
-    height: calc(100% - 105px);
+    height: 100vh;
     overflow: auto;
 }
 

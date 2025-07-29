@@ -13,7 +13,7 @@ import WebGLWarning from './ui/WebGLWarning';
 import { useWebGL2Enabled } from './hooks/useWebGL2Support';
 import { NoToneMapping } from 'three';
 import { Analytics } from "@vercel/analytics/react"
-
+import styles from './../src/scenes/Room/Device/Monitor.module.css';
 // scenes
 import GalaxyScene from './scenes/Galaxy/GalaxyScene';
 import SolarSystemScene from './scenes/SolarSystem/SolarSystemScene';
@@ -88,9 +88,16 @@ function AppContent() {
 function App() {
   return (
     <>
+
       <ErrorBoundary>
         <MobileProvider>
-          <AppContent />
+          <div className={styles['web-content']}>
+            <iframe
+              src="/templates/Portfolio.html"
+              title="Portfolio"
+              className={styles['web-iframe']}
+            />
+          </div>
         </MobileProvider>
       </ErrorBoundary>
       <Analytics />

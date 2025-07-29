@@ -36,7 +36,7 @@ export const useSceneStore = create<SceneState>((set, get) => ({
   loadingProgress: 0,
   loadingText: undefined,
 
-  currentScene: 'galaxy', // start scene
+  currentScene: 'room', // start scene
 
   zoomDirection: null,
   sceneZoomed: null,
