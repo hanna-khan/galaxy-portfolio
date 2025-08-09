@@ -865,6 +865,10 @@ body {
     border: none;
 }
 
+.portfolio-card a {
+    text-transform: lowercase;
+}
+
 .portfolio-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
